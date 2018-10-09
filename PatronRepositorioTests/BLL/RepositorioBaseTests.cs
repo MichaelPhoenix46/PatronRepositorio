@@ -21,16 +21,15 @@ namespace PatronRepositorio.BLL.Tests
         [TestMethod()]
         public void GuardarTest()
         {
+            Cuentas cuentas = new Cuentas();
+            cuentas.CuentaId = 100;
+            cuentas.Descripcion = "lol";
             RepositorioBase<Cuentas> repositorio;
             repositorio = new RepositorioBase<Cuentas>();
 
-            Assert.IsTrue(repositorio.Guardar(GetCuenta()));
+            Assert.IsTrue(repositorio.Guardar(cuentas));
         }
 
-        private Cuentas GetCuenta()
-        {
-            throw new NotImplementedException();
-        }
 
         [TestMethod()]
         public void ModificarTest()
